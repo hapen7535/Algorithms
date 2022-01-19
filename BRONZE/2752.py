@@ -18,4 +18,6 @@ if a>b:
 
 print(a,b,c)
 
+#sort 함수 사용가능
+
 
