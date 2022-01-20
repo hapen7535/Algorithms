@@ -13,3 +13,7 @@ if hour >= 24:
     hour = hour - 24
 
 print(hour,min)
+
+
+
+
