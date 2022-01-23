@@ -6,7 +6,7 @@ for i in range(count):
 
     a,b = map(int, input().split())
     ans = pow(a,b,10) #pow(base, -exp, mod)
-    if not ans:
+    if not ans: #나머지가 없는 경우
         print(ans + 10)
     else:
         print(ans)
