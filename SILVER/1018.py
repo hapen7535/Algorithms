@@ -1,4 +1,4 @@
-#완전 탐색 이용
+#브루트 포스 이용
 N,M = map(int, input().split())
 orig = []
 count = []
