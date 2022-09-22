@@ -3,21 +3,14 @@ input = sys.stdin.readline
 
 N = int(input())
 tops = list(map(int, input().split()))
-
 stck = []
-result = []
+result = [0]*N
 
 for i in range(N):
-    while stck:
-        if stck[-1][1] >= tops[i]:
-            result.append(stck[-1][0] + 1)
-            break
-        else:
-            stck.pop()
-    if not stck:
-        result.append(0)
-    stck.append([i, tops[i]])
-        
+    top = tops[i]
+    while stck and tops[stck[-1]] < top:
+        stck.pop()
+    if stck:
+        result[i] = stck[-1] + 1
     stck.append(i)
-    
-print(' '.join(map(str,result)))    
+print(' '.join(map(str,result)))   
