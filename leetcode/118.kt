@@ -1,14 +1,20 @@
 class Solution {
     fun generate(numRows: Int): List<List<Int>> {
         val result = mutableListOf<List<Int>>()
-	    repeat(numRows) { depth ->
-		result.add(MutableList(depth + 1) { i ->
-			when (i) {
-				0, depth -> 1
-				else -> result[depth - 1][i - 1] + result[depth - 1][i]
-			    }
-		    })
-	    }
+	    
+        for(i in 0 until numRows){
+            val layer = mutableListOf<Int>()
+            for(j in 0 .. i){
+                if(j == 0 || j == i){
+                    layer.add(1)
+                }
+                else{
+                    layer.add(result.last()[j-1] + result.last()[j])
+                }
+            }
+            result.add(layer)
+        }
+
 	    return result
     }
 }
