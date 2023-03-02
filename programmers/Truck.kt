@@ -5,19 +5,20 @@ class Solution {
         var answer = 0
         var numberOfBridgeWeight = weight
         
-        var trucksInBridge : Queue<Int> = LinkedList()
-        var trucks : Queue<Int> = LinkedList()
+        val trucksInBridge: Queue<Int> = LinkedList(List(bridge_length){0})
+        val trucks: Queue<Int> = LinkedList(truck_weights.toList())
         
-        for(i in 0 .. truck_weights.size - 1){
-            trucks.add(truck_weights[i])
-        }
+//         var trucksInBridge : Queue<Int> = LinkedList()
+//         var trucks : Queue<Int> = LinkedList()
         
-        for(i in 0 .. bridge_length - 1){
-            trucksInBridge.add(0)
-        }
+//         for(i in 0 .. truck_weights.size - 1){
+//             trucks.add(truck_weights[i])
+//         }
         
-//         val trucksInBridge: Queue<Int> = LinkedList(List(bridge_length){0})
-//         val truck: Queue<Int> = LinkedList(truck_weights.toList())
+//         for(i in 0 .. bridge_length - 1){
+//             trucksInBridge.add(0)
+//         }
+        
         
         while(!trucksInBridge.isEmpty()){
             if(trucksInBridge.peek() > 0) numberOfBridgeWeight += trucksInBridge.peek()
