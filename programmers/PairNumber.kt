@@ -22,9 +22,15 @@ class Solution {
             answer.append(it)
         }
 
-        if(answer.isEmpty()) return "-1"
+        if(answer.isEmpty()) return EMPTY_NUM
         else if(answer[0] == '0') return "0"
 
         return answer.toString()
     }
+    
+    companion object{
+        const val EMPTY_NUM = "1"
+    
+    }
+    
 }
