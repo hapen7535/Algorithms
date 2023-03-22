@@ -4,7 +4,7 @@ class Solution {
         
         val orderWords = order.toString()
         for(word in orderWords){
-            if(word.toInt() % 3 == 0){
+            if(word != '0'&& word.toInt() % 3 == 0){
                 answer++
             }
         }
